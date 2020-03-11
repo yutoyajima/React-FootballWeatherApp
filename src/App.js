@@ -35,7 +35,7 @@ const App = () => {
             "Emirates Stadium",
             "Stanford Bridge",
             "Selhurst Park",
-            "Tottenham Hotspur",
+            "Tottenham Hotspur Stadium",
             "London Stadium"
          ]
       },
