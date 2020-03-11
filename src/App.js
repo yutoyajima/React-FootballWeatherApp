@@ -186,7 +186,7 @@ const App = () => {
    }
    
    useEffect (() => {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=ae5d4eb76b5f63d47932a3b2ea6fb8dd`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=ae5d4eb76b5f63d47932a3b2ea6fb8dd`)
       .then(response => response.json())
       .then(function(response) {
          // c = response.main.temp - 273.15
