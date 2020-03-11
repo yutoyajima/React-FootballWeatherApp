@@ -37,7 +37,8 @@ const ButtonsStyle = styled.div`
    `}
    ${media.lessThan("600px")`
       width: 60%;
-      margin-right: ${({showing}) => showing ? "-100%" : "0"};
+      /* margin-right: ${({showing}) => showing ? "-100%" : "0"}; */
+      right: ${({showing}) => showing ? "-100%" : "0"};
    `}
    button {
       width: 85%;

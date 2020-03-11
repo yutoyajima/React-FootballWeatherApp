@@ -228,6 +228,7 @@ const Bg = styled.div`
    background-image: url(${bgimg});
    background-size: cover;
    position: relative;
+   overflow: hidden;
    ${media.lessThan("1100px")`
 
    `}
