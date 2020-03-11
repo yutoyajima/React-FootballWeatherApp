@@ -5,6 +5,7 @@ import Buttons from "./components/Buttons"
 import './App.css';
 import ResetCSSandLib from "./components/resetCSSandLib"
 import styled from "styled-components"
+import media from "styled-media-query";
 import bgimg from "./img/aa.jpg"
 
 
@@ -16,6 +17,7 @@ const App = () => {
    const [weatherData, setWeatherData] = useState({ weather: [{}], main: {}, wind: {}, name: "" })
    const [city, setCity] = useState("London")
    const [index, setIndex] = useState(0)
+   const [showing, setShowing] = useState(true)
 
 
    const locations = [
@@ -177,6 +179,10 @@ const App = () => {
    const showWeather = (id) => {
       setCity(locations[id].city)
       setIndex(locations[id].id)
+      setShowing(true)
+   }
+   const closeWeather = () => {
+      setShowing(false)
    }
    
    useEffect (() => {
@@ -195,14 +201,22 @@ const App = () => {
       <>
          <ResetCSSandLib />
          <Bg>
-            {/* <div>
-               </div> */}
+               <h1>Football Weather</h1>
                <Buttons 
                   locations={locations} 
                   showWeather={showWeather} 
+                  showing={showing}
                />
-               <CityData locations={locations} index={index} />
-               <WeatherData weatherData={weatherData} />
+               <CityData 
+                  locations={locations} 
+                  index={index} 
+                  showing={showing} 
+                  closeWeather={closeWeather}
+               />
+               <WeatherData 
+                  weatherData={weatherData} 
+                  showing={showing} 
+               />
          </Bg>
       </>
    )
@@ -213,8 +227,13 @@ const Bg = styled.div`
    height: 100vh;
    background-image: url(${bgimg});
    background-size: cover;
-   background-position-y: -250px;
    position: relative;
+   ${media.lessThan("1100px")`
+
+   `}
+   ${media.lessThan("600px")`
+
+   `}
    &:after {
       content: "";
       display: block;
@@ -222,7 +241,18 @@ const Bg = styled.div`
       background-color: rgba(0, 60, 100, 0.5);
       width: 100%;
       height: 100vh;
-      /* z-index: 2; */
+   }
+   h1 {
+      display: block;
+      width: 310px;
+      position: absolute;
+      top: 50%;
+      left: -120px;
+      font-size: 2.1rem;
+      font-weight: bold;
+      transform: rotate(90deg) translateX(-5%);
+      font-family: sans-serif;
+      color: rgba(0,0,0,0.3);
    }
 `
 

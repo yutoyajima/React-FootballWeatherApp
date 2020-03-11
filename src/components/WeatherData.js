@@ -6,6 +6,7 @@ import Temperature from "./Temperature"
 import Wind from "./Wind"
 import Humidity from "./Humidity"
 import styled from "styled-components"
+import media from "styled-media-query";
 
 
 import clearIcon from "../img/clear.png"
@@ -19,7 +20,7 @@ import notGoodIcon from "../img/notgood.png"
 
 
 
-const WeatherData = ({weatherData}) => {
+const WeatherData = ({weatherData, showing}) => {
 
    let weatherId = weatherData.weather[0].id
    let weather
@@ -57,19 +58,33 @@ const WeatherData = ({weatherData}) => {
    }
    
    return (
-      <WeatherDataStyle bgc={bgc} >
+      <WeatherDataStyle bgc={bgc} showing={showing} >
          <CityName weatherData={weatherData} />
          <WeatherIcon iconSrc={iconSrc} />
          <WeatherName weather={weather} />
          <Temperature weatherData={weatherData} />
          <Wind weatherData={weatherData} />
          <Humidity weatherData={weatherData} />
+         <p className="credit">
+            API got from <br/>
+            <a href="https://openweathermap.org/api">OpenWeather</a>
+         </p>
       </WeatherDataStyle>
    )
 }
 
 const WeatherDataStyle = styled.div`
    background: ${ ({bgc}) => bgc};
+   transition: 0.5s;
+   ${media.lessThan("960px")`
+    /* screen width is less than 768px (medium) */
+      width: 50%;
+   `}
+   ${media.lessThan("600px")`
+    /* screen width is less than 768px (medium) */
+      width: 65%;
+      margin-left: ${({showing}) => showing ? "0" : "-100%"};
+   `}
 
    /* clear */
    /* background: linear-gradient(rgb(255, 120, 9), rgb(255, 180, 0), rgb(255, 255, 0)); */
@@ -93,6 +108,16 @@ const WeatherDataStyle = styled.div`
    border-radius: 0 10px 10px 0;
    box-shadow: 3px 3px 12px ; 
    z-index: 4;
+   .credit {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #fff;
+      opacity: 0.6;
+      a {
+         border-bottom: 1px solid;
+      }
+   }
 `
 
 export default WeatherData
