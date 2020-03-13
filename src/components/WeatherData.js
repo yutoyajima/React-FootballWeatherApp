@@ -77,11 +77,9 @@ const WeatherDataStyle = styled.div`
    background: ${ ({bgc}) => bgc};
    transition: 0.5s;
    ${media.lessThan("960px")`
-    /* screen width is less than 768px (medium) */
       width: 50%;
    `}
    ${media.lessThan("600px")`
-    /* screen width is less than 768px (medium) */
       width: 65%;
       margin-left: ${({showing}) => showing ? "0" : "-100%"};
    `}

@@ -5,7 +5,7 @@ import styled from "styled-components"
 const Temperature = ({weatherData}) => {
    let temp = Math.floor(weatherData.main.temp - 273.15)
 
-   console.log(temp);
+   // console.log(temp);
    
    return (
       <TempStyle>

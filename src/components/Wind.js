@@ -4,8 +4,8 @@ import styled from "styled-components"
 const Wind = ({weatherData}) => {
    let windSpeed = weatherData.wind.speed
    let windDirec = weatherData.wind.deg
-   console.log(windSpeed);
-   console.log(windDirec);
+   // console.log(windSpeed);
+   // console.log(windDirec);
    
    return (
       <WindStyle windDirec={windDirec} >
