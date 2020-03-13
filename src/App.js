@@ -35,7 +35,7 @@ const App = () => {
             "Emirates Stadium",
             "Stanford Bridge",
             "Selhurst Park",
-            "Tottenham Hotspur",
+            "Tottenham Hotspur Stadium",
             "London Stadium"
          ]
       },
@@ -186,13 +186,11 @@ const App = () => {
    }
    
    useEffect (() => {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=ae5d4eb76b5f63d47932a3b2ea6fb8dd`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},uk&appid=ae5d4eb76b5f63d47932a3b2ea6fb8dd`)
       .then(response => response.json())
       .then(function(response) {
-         // c = response.main.temp - 273.15
-         // setStatus(response.weather[0])
          setWeatherData(response)
-         console.log(response);
+         // console.log(response);
       })
    }, [city])
    
@@ -228,6 +226,7 @@ const Bg = styled.div`
    background-image: url(${bgimg});
    background-size: cover;
    position: relative;
+   overflow: hidden;
    ${media.lessThan("1100px")`
 
    `}

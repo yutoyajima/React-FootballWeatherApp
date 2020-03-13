@@ -14,7 +14,6 @@ const WeatherNameStyle = styled.p`
    text-align: center;
    font-size: 1.8rem;
    letter-spacing: 2px;
-   /* font-weight: bold; */
    margin-top: 10px;
    color: #fff;
 `

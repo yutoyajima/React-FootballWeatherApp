@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Humidity = ({weatherData}) => {
 
    let humidity =  weatherData.main.humidity
-   console.log(humidity);
+   // console.log(humidity);
    
 
    return (

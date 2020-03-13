@@ -37,7 +37,7 @@ const ButtonsStyle = styled.div`
    `}
    ${media.lessThan("600px")`
       width: 60%;
-      margin-right: ${({showing}) => showing ? "-100%" : "0"};
+      right: ${({showing}) => showing ? "-100%" : "0"};
    `}
    button {
       width: 85%;
@@ -51,7 +51,6 @@ const ButtonsStyle = styled.div`
       background: linear-gradient(to right, rgba(6, 190, 182, 0.5), rgba(40, 60, 134, 0.5)); 
       color: #fff;
       ${media.lessThan("960px")`
-      /* screen width is less than 768px (medium) */
          width: 100%;
       `}
       &:hover {
