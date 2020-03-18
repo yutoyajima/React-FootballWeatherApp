@@ -4,10 +4,10 @@ You can get weather information where premier league matches held.
 Click a city and get weather information!
 
 ## What is Used
-React,
-Styled-component,
-Style-media-query
-
+React, <br/>
+Styled-component for styling, <br/>
+Style-media-query for responsive design <br/>
+API got from OpenWeather (https://openweathermap.org/api) <br/>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
