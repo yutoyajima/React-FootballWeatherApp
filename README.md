@@ -1,9 +1,12 @@
 ## Football Weather App for Premier League
 
 You can get weather information where premier league matches held.
+Click a city and get weather information!
 
-
-
+## What is Used
+React,
+Styled-component,
+Style-media-query
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
