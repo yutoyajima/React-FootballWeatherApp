@@ -1,7 +1,10 @@
 ## Football Weather App for Premier League
 
-You can get weather information where premier league matches held.
+You can get weather information where premier league matches held. <br/>
 Click a city and get weather information!
+
+## How to access demo app
+Click [here](https://yutoyajima.github.io/React-FootballWeatherApp/) to visit github pages
 
 ## What is Used
 React, <br/>
